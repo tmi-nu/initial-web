@@ -1,0 +1,67 @@
+@charset "utf-8";
+
+
+/*トップページのメインイメージ
+---------------------------------------------------------------------------*/
+/*アニメーションのキーフレーム。透明(opacity:0)から色がつく(opacity:1)までのアニメーションです。*/
+@keyframes img {
+0% {opacity: 0;}
+100% {opacity: 1;}
+}
+/*画像全体を囲むブロック*/
+#mainimg {
+	overflow: hidden;
+    text-align: center;
+    margin: 0 auto;
+	margin-bottom: 30px;	/*画像の下に空けるスペース。下のコンテンツとの間の余白です。*/
+/*	background: url(../images/mainimg_bg.png) no-repeat center center / cover;	/*アニメーションがスタートする前の土台画像の読み込み*/
+}
+/*画像１枚ごとの指定*/
+#mainimg img {
+	width: 85%;			/*画像の幅。５枚なので100÷5=20です。*/
+    text-align: center;
+//	transition: 0.4s;	/*マウスオン時に0.4秒かけて動く(少しだけ大きくなる)指定*/
+//	transform-origin: left top;	/*マウスオン時に画像が少しだけ大きくなる際の基準点*/
+//	animation-name: img;		/*アニメーションのキーフレームの名前。上の@keyframesの横の名前です。*/
+//	animation-duration: 0.5S;	/*アニメーション(上のkeyframe)を実行する時間。*/
+//	animation-fill-mode: both;	/*アニメーションの待機中は最初のキーフレームを維持、終了後は最後のキーフレームを維持。*/
+}
+/*画像にリンクをはった際のマウスオン時設定*/
+#mainimg a img:hover {
+	opacity: 1;
+	position: relative;z-index: 1;
+	transform: scale(1.04);	/*画像を104%に拡大する*/
+}
+/*１枚目画像*/
+#img1 {
+	animation-delay: 2s;	/*2秒遅れてアニメーションをスタート*/
+}
+/*２枚目画像*/
+#img2 {
+	animation-delay: 2.2s;	/*2.2秒遅れてアニメーションをスタート*/
+}
+/*３枚目画像*/
+#img3 {
+	animation-delay: 2.4s;	/*2.4秒遅れてアニメーションをスタート*/
+}
+/*４枚目画像*/
+#img4 {
+	animation-delay: 2.6s;	/*2.6秒遅れてアニメーションをスタート*/
+}
+/*５枚目画像*/
+#img5 {
+	animation-delay: 2.8s;	/*2.8秒遅れてアニメーションをスタート*/
+}
+
+
+
+/*画面幅600px以下の設定
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width:600px){
+
+/*画像全体を囲むブロック*/
+#mainimg {
+	margin-bottom: 20px;	/*画像の下に空けるスペース。下のコンテンツとの間の余白です。*/
+}
+
+}

@@ -1,0 +1,119 @@
+@charset "utf-8";
+
+
+/*日本地図
+---------------------------------------------------------------------------*/
+/*地図全体を囲むブロック*/
+#map {
+	position: relative;
+	font-size: 12px;	/*文字サイズ*/
+	height: 400px;		/*ブロックの高さ*/
+	width: 100%;		/*ブロックの幅*/
+	margin-left: 4%;	/*左に空けるスペース*/
+	margin-bottom: 30px;	/*下に空けるスペース*/
+}
+/*リンクテキスト*/
+#map a {
+	display: block;text-decoration: none;position: absolute;text-align: center;
+	width: 7%;		/*幅*/
+	height: 6%;		/*高さ*/
+	color: #000;	/*文字色*/
+}
+/*マウスオン時*/
+#map a:hover {
+	opacity: 0.5;	/*透明度50%にする*/
+}
+
+/*九州ブロック-------------------------------*/
+.kyusyu a {background: #f4c9e3;}
+
+.okinawa {left: 0%;bottom: 0px;}
+.kagoshima {left: 0%;bottom: 10%;width: 14.5% !important;}
+.kumamoto {left: 0%;bottom: 17%;}
+.miyazaki {left: 7.5%;bottom: 17%;}
+.nagasaki {left: 0%;bottom: 24%;}
+.oita {left: 7.5%;bottom: 24%;}
+.saga {left: 0%;bottom: 31%;}
+.fukuoka {left: 7.5%;bottom: 31%;}
+
+/*四国ブロック-------------------------------*/
+.shikoku a {background: #dec3f4;}
+
+.kochi {left: 17%;bottom: 10%;}
+.ehime {left: 24.5%;bottom: 10%;}
+.kagawa {left: 17%;bottom: 17%;}
+.tokushima {left: 24.5%;bottom: 17%;}
+
+/*中国ブロック-------------------------------*/
+.cyugoku a {background: #f4c7c3;}
+
+.yamaguchi {left: 17%;bottom: 30%;height: 13% !important;}
+.hiroshima {left: 24.5%;bottom: 30%;}
+.okayama {left: 32%;bottom: 30%;}
+.shimane {left: 24.5%;bottom: 37%;}
+.tottori {left: 32%;bottom: 37%;}
+
+/*関西ブロック-------------------------------*/
+.kansai a {background: #f7daba;}
+
+.hyogo {left: 45.5%;left: 39.5%;bottom: 30%;height: 13% !important;}
+.kyoto {left: 47%;bottom: 37%;}
+.shiga {left: 54.5%;bottom: 37%;}
+.osaka {left: 47%;bottom: 30%;}
+.nara {left: 54.5%;bottom: 30%;}
+.mie {left: 54.5%;bottom: 23%;}
+.wakayama {left: 47%;bottom: 23%;}
+
+/*中部ブロック-------------------------------*/
+.tyubu a {background: #f7f1ad;}
+
+.fukui {left: 54.5%;bottom: 44%;}
+.ishikawa {left: 54.5%;bottom: 51%;}
+.toyama {left: 62%;bottom: 44%;}
+.gifu {left: 62%;bottom: 37%;}
+.aichi {left: 62%;bottom: 30%;}
+.nigata {left: 62%;bottom: 51%;width: 14.5% !important;}
+.nagano {left: 69.5%;bottom: 44%;}
+.yamanashi {left: 69.5%;bottom: 37%;}
+.shizuoka {left: 69.5%;bottom: 30%;}
+
+/*関東ブロック-------------------------------*/
+.kanto a {background: #cbefcf;}
+
+.kanagawa {left: 77%;bottom: 30%;}
+.tokyo {left: 77%;bottom: 37%;}
+.saitama {left: 77%;bottom: 44%;}
+.gunma {left: 84.5%;bottom: 44%;}
+.tochigi {left: 84.5%;bottom: 37%;}
+.ibaraki {left: 84.5%;bottom: 30%;}
+.chiba {left: 84.5%;bottom: 23%;}
+
+/*東北ブロック-------------------------------*/
+.tohoku a {background: #bae6f7;}
+
+.fukushima {left: 77%;bottom: 51%;width: 14.5% !important;}
+.yamagata {left: 77%;bottom: 58%;}
+.miyagi {left: 84.5%;bottom: 58%;}
+.akita {left: 77%;bottom: 65%;}
+.iwate {left: 84.5%;bottom: 65%;}
+.aomori {left: 77%;bottom: 72%; width: 14.5% !important;}
+
+/*北海道ブロック-------------------------------*/
+.hokkaido a {background: #b9c6f9;}
+
+.hokkaido a {left: 77%;bottom: 83%;width: 14.5% !important;height: 15% !important;}
+
+
+
+/*画面幅600px以下の設定
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width:600px){
+
+/*日本地図
+---------------------------------------------------------------------------*/
+/*地図全体を囲むブロック*/
+#map {
+	font-size: 10px;	/*文字サイズ*/
+}
+
+}

@@ -1,0 +1,416 @@
+@charset "utf-8";
+
+
+/*詳細ページ
+---------------------------------------------------------------------------*/
+.item {
+	position: relative;
+}
+
+/*こだわりアイコン（テキスト表示用）
+---------------------------------------------------------------------------*/
+/*アイコン共通*/
+.icon {
+	display: inline-block;position: relative;bottom: 2px;
+	font-size: 11px;		/*文字サイズ*/
+	padding: 0 5px;			/*上下、左右へのボックス内の余白*/
+	border-radius: 4px;		/*角丸のサイズ*/
+	border: 1px solid #ccc;	/*枠線の幅、線種、色*/
+	background: #eee;		/*背景色*/
+}
+.icon.current {background: #ccc;}
+.icon a {text-decoration: none;}
+/*アイコン：赤*/
+.icon .color1 {
+	border: 1px solid #d90000;	/*枠線の幅、線種、色*/
+	background: #d90000;		/*背景色*/
+	color: #fff !important;		/*文字色*/
+}
+/*アイコン：青*/
+.icon .color2 {
+	border: 1px solid #2b2ebc;	/*枠線の幅、線種、色*/
+	background: #2b2ebc;		/*背景色*/
+	color: #fff;				/*文字色*/
+}
+
+/*一覧ページのボックス内の右上のマーク
+（CMSの場合は管理ページだと「オプション1」～のプルダウン、setup.phpだと「オプション選択肢」に関連します）
+---------------------------------------------------------------------------*/
+/*option1〜option2、と、newアイコン共通（初期設定）*/
+.option1,.option2,.new {
+	text-align: center;display: inline-block;padding: 0;
+	font-size: 10px;	/*文字サイズ*/
+	line-height: 20px;	/*高さ*/
+	width: 100px;		/*幅*/
+	position: absolute;
+	right: 0px;		/*右から0pxの場所に配置*/
+	top: 0px;		/*上から0pxの場所に配置*/
+	background: #999;	/*背景色*/
+	color: #fff;		/*も地色*/
+	transform: rotate(45deg) translate(27px,-10px);	/*45度回転、右へ,下へ(マイナス設定なので上へ向けての指定)の移動距離*/
+}
+/*詳細ページで使う場合の変更設定*/
+.item .option1, .item .option2, .item .new {
+	position: static;transform: none;width: auto;
+	padding: 0 10px;	/*上下、左右へのアイコン内の余白*/
+	margin-left: 5px;	/*アイコン同士に空けるスペース*/
+}
+/*「new」への追加設定。色を変更します。*/
+.new {
+	color: #FFF;		/*文字色*/
+	background: #F00;	/*背景色*/
+}
+/*「option1」への追加設定。色を変更します。*/
+.option1 {
+	color: #FFF;			/*文字色*/
+	background: #ff9000;	/*背景色*/
+}
+
+/*listブロック
+---------------------------------------------------------------------------*/
+/*ブロック全体*/
+.list {
+	overflow: hidden;position: relative;
+	border-top: 1px solid #ccc;	/*上の線の幅、線種、色*/
+	padding: 10px 20px 25px;	/*上、左右、下へのボックス内の余白*/
+	line-height: 1.5;			/*行間を少し狭く*/
+}
+/*最後のブロックに下線を入れる*/
+.list:last-of-type {
+	border-bottom: 1px solid #ccc;	/*下の線の幅、線種、色*/
+}
+/*ブロック内の画像*/
+.list p.img {
+	padding: 0px !important;
+	float: left;		/*左に回り込み*/
+	width: 20%;			/*画像の幅*/
+	margin-right: 1%;	/*画像の右側へ空けるスペース*/
+}
+/*右側ブロック*/
+.list .text {
+	float: right;	/*ブロックを右寄せ*/
+	width: 78%;		/*幅*/
+}
+/*ブロック内の段落(p)タグ*/
+.list p {
+	padding: 0 !important; 
+}
+/*ブロック内の見出し(h4)*/
+.list h4 {
+	font-size: 20px;	/*文字サイズ*/
+}
+/*ブロック内の見出し(h4)にリンクを貼った場合の設定*/
+.list h4 a {
+	color: #000e78;		/*文字色*/
+}
+/*ボックス内のサイト名*/
+.list p.name {
+	position: absolute;
+	right: 20px;	/*ボックスの右から20pxの場所に配置*/
+	bottom: 5px;	/*ボックスの下から5pxの場所に配置*/
+}
+
+/*４列タイプ(list-compact)のブロック
+---------------------------------------------------------------------------*/
+/*各ボックスの設定*/
+.list-compact {
+	position: relative;overflow: hidden;
+	margin: 1%;			/*ボックスの外側に空けるスペース*/
+	float: left;		/*左に回り込み*/
+	width: 23%;			/*幅*/
+	height: 220px;		/*高さ*/
+	font-size: 12px;	/*文字サイズ*/
+	line-height: 1.5;	/*行間を少し狭くする*/
+}
+/*ボックス内のh4タグ設定*/
+.list-compact h4,.list-compact h4 a {
+	font-weight: bold;	/*太字にする*/
+	height: 1.5em;		/*高さ*/
+	overflow: hidden;	/*高さ以上になったら非表示にする*/
+}
+/*ボックス内のp(段落)タグ設定*/
+.list-compact p {
+	padding: 0px !important;
+	height: 3em;		/*高さ*/
+	overflow: hidden;	/*高さ以上になったら非表示にする*/
+	margin-bottom: 5px;
+}
+/*画像を共通サイズにする設定*/
+.list-compact p.img {
+	width: 100%;	/*幅*/
+	height: 60%;	/*高さ*/
+}
+.list-compact img {width: 100%;height: 100%;}
+/*ボックス内のサイト名*/
+.list-compact p.name {
+	height: 1.5em;
+}
+
+/*登録日・更新日
+---------------------------------------------------------------------------*/
+.date {
+	clear: both;
+	font-size: 11px !important;	/*文字サイズ*/
+	color: #999;		/*文字色*/
+	text-align: right;	/*右寄せ*/
+}
+.date span {
+	display: inline-block;
+}
+
+/*一覧ページの各物件ボックス内のテーブル
+---------------------------------------------------------------------------*/
+.list table.c2 {
+	font-size: 12px;	/*文字サイズ*/
+	width: 100%;		/*テーブル幅*/
+	margin-bottom: 5px;
+}
+.list table.c2,
+.list table.c2 td,
+.list table.c2 th {
+	border: 1px solid #dcdcdc;	/*枠線の幅、線種、色*/
+}
+.list table.c2 td,
+.list table.c2 th {
+	padding: 1%;	/*テーブル内の余白*/
+}
+.list table.c2 th {
+	width: 20%;		/*幅*/
+	background: #fafafa;	/*背景色*/
+}
+.list table.c2 td {
+	width: 30%;		/*幅*/
+}
+
+/*list2ボックス（２列並びのボックス）
+---------------------------------------------------------------------------*/
+/*ボックス全体の設定*/
+.list2 {
+	overflow: hidden;
+}
+/*各ボックスの設定*/
+.list2 li {
+	float: left;		/*左に回り込み*/
+	width: 49%;			/*幅*/
+	line-height: 1.5;	/*行間*/
+	margin: 0px 0.5% 20px;	/*上、左右、下へのボックスの外側へ空けるスペース*/
+}
+.list2 a {
+	display: block;text-decoration: none;
+	height: 65px;		/*ボックスの高さ*/
+	overflow: hidden;	/*ボックスから飛び出た場合、非表示にする設定*/
+	border-radius: 10px;	/*角丸のサイズ*/
+	padding: 15px;			/*ボックス内の余白*/
+	border: 1px solid #ccc;	/*枠線の幅、線種、色*/
+	background: linear-gradient(#fff, #f2f2f2);/*背景グラデーション*/
+	box-shadow: 2px 2px 3px rgba(0,0,0,0.1);	/*ボックスの影。右へ、下へ、ぼかし幅、0,0,0は黒の事で0.1は10%色がついた状態の事。*/
+}
+/*マウスオン時*/
+.list2 a:hover {
+	background: #fff;	/*背景色*/
+	box-shadow: none;	/*ボックスの影をなくす設定*/
+	position: relative;
+	left: 1px;	/*現在地から右に1px移動する*/
+	top: 1px;	/*現在地から下に1px移動する*/
+}
+/*ボックス内の画像。※imgタグにclass="img"をつけた場合。*/
+.list2 .img {
+	height: 100%;	/*高さ*/
+	float: right;	/*右に回り込み*/
+}
+/*件数のテキスト。※list2内でspanタグで囲った場合。*/
+.list2 span {
+	font-size: 28px;	/*文字サイズ*/
+	color: #000e78;		/*文字色*/
+}
+
+/*sub,sideコンテンツ内のlist-subボックス
+---------------------------------------------------------------------------*/
+/*ボックス１個あたりの設定*/
+.list-sub {
+	position: relative;overflow: hidden;
+	border-left: 1px solid #8c876c;		/*左の線の線種、幅、色*/
+	border-right: 1px solid #8c876c;	/*右の線の線種、幅、色*/
+	border-bottom: 1px solid #8c876c;	/*下の線の線種、幅、色*/
+	line-height: 1.5;					/*行間を少し狭くする。基本となる値は一番上のbodyにあります。*/
+	font-size: 12px;					/*文字サイズ*/
+	background: #fff;	/*背景色*/
+}
+.list-sub a {
+	display: block;text-decoration: none;overflow: hidden;
+	padding: 5px;		/*ボックス内の余白*/
+	background: #fff;	/*背景色*/
+}
+/*マウスオン時のボックス*/
+.list-sub a:hover {
+	/*background: #fffee1;	背景色*/
+}
+/*h4タグ*/
+.list-sub a h4 {
+	font-weight: bold;	/*太字にする設定*/
+}
+/*段落(p)タグ*/
+.list-sub p {
+	padding: 0 !important;
+}
+/*画像（サイドコンテンツの「お知らせ」内のサムネイル画像）*/
+.list-sub .img.t {
+	width: 25%;			/*画像の幅*/
+	float: left;		/*左に回り込み*/
+	margin-right: 10px;	/*画像右側に空ける余白*/
+}
+/*他、微調整*/
+section .list-sub:last-of-type {margin-bottom: 20px;}
+.box1 .list-sub:last-of-type {margin-bottom: 0;}
+
+/*サイト名（name）
+---------------------------------------------------------------------------*/
+p.name {
+	overflow: hidden;
+	font-size: 12px !important;	/*文字サイズ*/
+	background: url(../images/icon_home.png) no-repeat left center/12px;
+	padding-left: 15px !important;
+	float: right;
+}
+
+
+
+/*画面幅1000px以下の設定
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width:1000px){
+
+/*４列タイプ(list-compact)のブロック
+---------------------------------------------------------------------------*/
+/*画像を共通サイズにする設定*/
+.list-compact p.img {
+	height: 50%;	/*高さ*/
+}
+
+}
+
+
+
+/*画面幅900px以下の設定
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width:900px){
+
+/*４列タイプ(list-compact)のブロック
+---------------------------------------------------------------------------*/
+/*画像を共通サイズにする設定*/
+.list-compact p.img {
+	height: 66%;	/*高さ*/
+}
+
+/*sub,sideコンテンツ内のlist-subボックス
+---------------------------------------------------------------------------*/
+/*画像（サイドコンテンツの全ての画像を共通で変更）*/
+.list-sub .img {
+	width: 25%;			/*画像の幅*/
+	float: left;		/*左に回り込み*/
+	margin-right: 10px;	/*画像右側に空ける余白*/
+}
+
+}
+
+
+
+/*画面幅750px以下の設定
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width:750px){
+
+/*４列タイプ(list-compact)のブロック
+---------------------------------------------------------------------------*/
+/*画像を共通サイズにする設定*/
+.list-compact p.img {
+	height: 55%;	/*高さ*/
+}
+
+}
+
+
+
+/*画面幅600px以下の設定
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width:600px){
+
+/*４列タイプ(list-compact)のブロック
+---------------------------------------------------------------------------*/
+/*各ボックスの設定*/
+.list-compact {
+	float: none;
+	width: auto;
+	height: auto;
+}
+/*ボックス内のh4タグと、p(段落)タグ設定*/
+.list-compact h4,.list-compact h4 a, .list-compact p, .list-compact p.img, .list-compact img {
+	height: auto;
+}
+.list-compact p.img {
+	float: left;
+	width: 25%;
+	margin-right: 2%;
+}
+
+}
+
+
+
+/*画面幅480px以下の設定
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width:480px){
+
+/*一覧ページのボックス内の右上のマーク
+（CMSの場合は管理ページだと「オプション1」～のプルダウン、setup.phpだと「オプション選択肢」に関連します）
+---------------------------------------------------------------------------*/
+/*option1〜option2、と、newアイコン共通（初期設定）*/
+.option1,.option2,.new {
+	transform: rotate(45deg) translate(45px,-25px);	/*45度回転、右へ,下へ(マイナス設定なので上へ向けての指定)の移動距離*/
+}
+
+/*listブロック
+---------------------------------------------------------------------------*/
+/*ブロック全体*/
+.list {
+	padding: 5px 10px 25px;	/*上、左右、下へのブロック内の余白*/
+}
+/*ブロック内の見出し(h4)*/
+.list h4 {
+	font-size: 16px;	/*文字サイズ*/
+}
+
+/*list2ボックス（２列並びのボックス）
+---------------------------------------------------------------------------*/
+/*各ボックスの設定*/
+.list2 a {
+	padding: 5px 10px;	/*上下、左右へのボックス内の余白*/
+}
+/*件数のテキスト。※list2内でspanタグで囲った場合。*/
+.list2 span {
+	font-size: 18px;	/*文字サイズ*/
+}
+
+}
+
+
+
+/*画面幅360px以下の設定
+------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width:360px){
+
+/*list2ボックス（２列並びのボックス）
+---------------------------------------------------------------------------*/
+/*各ボックスの設定*/
+.list2 li {
+	float: none;width: auto;	/*１列にする設定*/
+	margin: 0 0 10px;	/*上、左右、下に空けるボックスの外側の余白。*/
+}
+.list2 li a {
+	height: auto;
+}
+/*ボックス内の画像。※imgタグにclass="img"をつけた場合。*/
+.list2 .img {
+	height: auto;	/*高さをリセット*/
+	width: 20%;		/*幅の指定に変更*/
+}
+
+}
