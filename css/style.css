@@ -780,12 +780,21 @@ body.s-n #sub,body.s-n #side {display: none;}
 header {
 	text-align: center;
 }
+    
 /*ロゴ画像*/
 header #logo {
 	float: none;
 	margin: 0 auto;
 	padding: 8px 0;
 	width: 60%;
+}
+    
+/* nulogo */
+header #nulogo {
+    width: 100%;
+    float: left;
+    margin: 0 auto;
+    padding: 8px 0;
 }
 /*ログイン（ヘッダー右側のログイン）
 ---------------------------------------------------------------------------*/
@@ -807,6 +816,16 @@ header .login a {
 body {
 	font-size: 12px;	/*文字サイズ*/
 }
+    
+
+    /* nulogo */
+header #nulogo {
+    width: 100%;
+    float: left;
+    margin: 0 auto;
+    padding: 8px 0;
+}
+    
 
 /*contents（３カラムを囲むブロック）
 ---------------------------------------------------------------------------*/
