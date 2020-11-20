@@ -961,3 +961,8 @@ img.fr,img.fl {float: none;margin: 0;width: 100%;}
     text-align: center;
     margin: 0 auto;
 }
+
+.jplink {
+    float: right;
+    margin-right: 10px;
+}
