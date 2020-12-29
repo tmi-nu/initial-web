@@ -1,0 +1,6 @@
+{
+    "routes":[],
+    "defaultHeaders":{
+        "referrer-policy": "strict-origin-when-cross-origin"
+    }
+}
