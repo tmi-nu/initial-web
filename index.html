@@ -2,6 +2,9 @@
 <html lang="ja">
 <head>
 <meta name="google-site-verification" content="C7b4MB_v2R4JRyuCNVGvg9idm0rF3FONz8W-zvQrlk4" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2H0QLB1ZWT"></script>
+<script> window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date()); gtag('config', 'G-2H0QLB1ZWT');</script>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>TMI卓越大学院プログラム</title>
@@ -14,6 +17,16 @@
 <script src="js/fixmenu_pagetop.js"></script>
 <script src="js/ddmenu_min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+    function tmicheck(){
+        var uimp= prompt("Please input TMI password","");
+        if ( /\W+/g.text(uimp)){
+            alert("Input error");
+        }else if (uimp != null){
+            location.href = "video/"+uimp+".html";
+        }
+    }
+</script>
 <script>
 $(document).ready(function(){
   $("a").on('click', function(event) {
@@ -142,12 +155,14 @@ $(document).ready(function(){
 <section id="new">
 <h2>更新情報・お知らせ</h2>
 <dl>
-<dt>2020/12/21</dt>
-<dd>連携企業と共に、自動配送ロボットテストベッドに関する議論を行います。
+<dt>2020/12/23</dt>
+<dd>履修生でクリスマスパーティを開催しました。
 <span class="newicon">NEW</span></dd>
+
+<dt>2020/12/21</dt>
+<dd>連携企業と共に、自動配送ロボットテストベッドに関する議論を行いました。
 <dt>2020/12/01</dt>
 <dd>オープニングセレモニーを実施しました（18名の新規履修生）
-<span class="newicon">NEW</span></dd>
 <dt>2020/11/17</dt>
 <dd>暫定版のWebページを公開しました。 
 <dt>2020/11/16</dt>
@@ -239,19 +254,29 @@ TMI卓越大学院の概要について解説しています！
 
 </section>
 
+<!--    
 <section>
-
-<h2>お知らせ</h2>
-
+<h2>超学際型教員討論型講義</h2>
 <div class="list-sub">
+<h4>関係者専用</h4>
+<p><button onclick="tmicheck()">ビデオへ</button>
+    （要パスワード)</p>
+    </div>
+
+</section>
+-->
+
+<!-- <div class="list-sub">
 <a href="http://www.mirai.nagoya-u.ac.jp/public_participation/2020/11/tmi20201127.html" target="_blank">
-<!-- <p class="img t"><img src="images/sample_side1.jpg" alt="タイトル"></p> -->
+<!-- <p class="img t"><img src="images/sample_side1.jpg" alt="タイトル"></p> 
 <h4>特任教員募集</h4>
 <p>TMI卓越大学院では、プログラム運営を担当する特任教員を公募しています。</p>
-<!-- <p class="name">えー</p> -->
+<!-- <p class="name">えー</p> --:>
 </a>
 </div>
-
+-->
+<section>
+<h2>お知らせ</h2>
 <div class="list-sub">    
 <a href="#">
 <!-- <p class="img t"><img src="images/sample_side1.jpg" alt="タイトル"></p> -->
